@@ -16,7 +16,7 @@ if grep -q "/opt/chef/embedded/bin" "/root/.bash_profile"; then
   echo "Chef path already existed. Checking version..."
 
   chef_installed_version_raw=$(chef-client -v)
-  chef_installed_version=${chef_installed_version_raw/Chef: /}
+  chef_installed_version=${chef_installed_version_raw/Chef Infra Client: /}
 
   echo "Chef v.$chef_installed_version currently installed"
 

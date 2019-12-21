@@ -16,13 +16,16 @@ apt-get update
 apt_lock_file="/srv/chef/tmp/scripts.apt.upgrade.lock"
 
 # Perform a package upgrade if this is the first run
-if [[ -f ${apt_lock_file} ]]; then
+if [[ ! -f ${apt_lock_file} ]]; then
 
   # Lock file found
   echo "Performing first time package upgrades..."
 
   # Upgrade all system packages
   apt-get -y upgrade --show-upgraded
+
+  # Create the lock file
+  touch ${apt_lock_file}
 
 else
 

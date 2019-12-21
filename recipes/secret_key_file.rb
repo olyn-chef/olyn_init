@@ -14,6 +14,7 @@ remote_file node[:olyn_init][:secret_key_file_path] do
   owner 'root'
   group 'root'
   mode 0600
+  sensitive true
   only_if { File.exist?(secret_key_file[:source]) }
 end
 
