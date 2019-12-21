@@ -23,7 +23,7 @@ Unencrypted databag contents should never hit a live server or a final git repo.
 Encrypted databags are saved to `[CHEF_ROOT]/data_bags`  using the secret key installed to Chef.
 
 Encrypt all data bags:  
-`.\.source\\olyn_init\scripts\dev\encrypt\data_bag.bat`
+`.\.source\olyn_init\scripts\dev\encrypt\data_bag.bat`
 
 Encrypt specific data bags:  
 `.\source\olyn_init\scripts\dev\encrypt\data_bag.bat [folder_1] [folder_2] [folder_3]`
