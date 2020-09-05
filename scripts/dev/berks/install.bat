@@ -5,5 +5,5 @@
 :: A `Berksfile` needs to be present in `[CHEF_ROOT]` with all of the required cookbooks listed.
 :: If a `Berksfile.lock` file already exists and the dependency versions are still valid, the existing cookbook version will be used.
 
-:: Run Berks to compile cookbook sources
+:: Run Berks to compile cookbook sources to the cookbook directory
 call berks vendor cookbooks

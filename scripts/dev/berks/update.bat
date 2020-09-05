@@ -5,5 +5,8 @@
 :: A `Berksfile` needs to be present in `[CHEF_ROOT]` with all of the required cookbooks listed.
 :: Unlike the `install.bat` script, this will attempt to download the latest acceptable versions of all cookbooks and their dependencies.
 
-:: Run Berks to update cookbook sources and dependencies to latest acceptable versions
+:: Run Berks to fetch cookbook sources and dependencies to latest acceptable versions
 call berks update
+
+:: Run Berks to compile cookbook sources to the cookbook directory
+call berks vendor cookbooks
