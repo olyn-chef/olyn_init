@@ -8,7 +8,7 @@ echo "Checking for Chef..."
 echo "~~~~~~~~~~~~~~~~~~~"
 
 # Set the version of Chef to install
-chef_required_version="15.5.17"
+chef_required_version="16.4.41"
 
 # See if chef is already installed (don't upgrade it)
 if grep -q "/opt/chef/embedded/bin" "/root/.bash_profile"; then

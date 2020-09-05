@@ -11,10 +11,20 @@ Command to generate a secret key:
 #### cookbooks/olyn_init/scripts/dev/berks/install.bat
 This script calls Berks to install all cookbooks and their dependencies into `[CHEF_ROOT]/cookbooks` from specified sources.
 Call this script from `[CHEF_ROOT]` during development.
-A Berksfile needs to be present in `[CHEF_ROOT]` with all of the required cookbooks listed.
+A `Berksfile` needs to be present in `[CHEF_ROOT]` with all of the required cookbooks listed.
+If a `Berksfile.lock` file already exists and the dependency versions are still valid, the existing cookbook version will be used.
 
 Called with:  
 `.\.source\olyn_init\scripts\dev\berks\install.bat`
+
+#### cookbooks/olyn_init/scripts/dev/berks/update.bat
+This script calls Berks to update all cookbooks and their dependencies into `[CHEF_ROOT]/cookbooks` from specified sources.
+Call this script from `[CHEF_ROOT]` during development.
+A `Berksfile` needs to be present in `[CHEF_ROOT]` with all of the required cookbooks listed.
+Unlike the `install.bat` script, this will attempt to download the latest acceptable versions of all cookbooks and their dependencies.
+
+Called with:  
+`.\.source\olyn_init\scripts\dev\berks\update.bat`
 
 #### cookbooks/olyn_init/scripts/dev/encrypt/data_bag.bat
 This script encrypts any raw data bags stored under `[CHEF_ROOT]/.unencrypted`.
