@@ -21,8 +21,11 @@ if [[ ! -f ${apt_lock_file} ]]; then
   # Lock file found
   echo "Performing first time package upgrades..."
 
-  # Upgrade all system packages
-  apt-get -y upgrade --show-upgraded
+  # Upgrade all system packages - including ones being held back
+  apt-get -y upgrade --show-upgraded --with-new-pkgs
+
+  # Clean up unneeded packages
+  apt autoremove -y
 
   # Create the lock file
   touch ${apt_lock_file}
