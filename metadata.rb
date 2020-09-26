@@ -6,7 +6,7 @@ license 'GPL-3.0'
 supports 'debian', '>= 10'
 source_url 'https://gitlab.com/olyn/olyn_init'
 description 'Configures Olyn'
-version '1.0.5'
+version '1.1.0'
 
 provides 'olyn_init::default'
 provides 'olyn_init::application_data'
