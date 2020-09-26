@@ -6,4 +6,4 @@
 :: If a `Berksfile.lock` file already exists and the dependency versions are still valid, the existing cookbook version will be used.
 
 :: Run Berks to compile cookbook sources to the cookbook directory
-call berks vendor cookbooks
+call berks vendor cookbooks -b Berksfile-dev
