@@ -9,5 +9,12 @@ description 'Configures Olyn'
 version '1.0.5'
 
 provides 'olyn_init::default'
+provides 'olyn_init::application_data'
+provides 'olyn_init::berkshelf'
+provides 'olyn_init::secret_key_file'
 recipe 'olyn_init::default', 'Configures Olyn'
+recipe 'olyn_init::application_data', 'Configures application data directory'
+recipe 'olyn_init::berkshelf', 'Configurations for Berkshelf'
 recipe 'olyn_init::secret_key_file', 'Configures secret key file'
+
+gem 'berkshelf'
