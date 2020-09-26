@@ -12,3 +12,5 @@ if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 # Call each sub script individually
 . "$DIR/packages.sh"
 . "$DIR/chef.sh"
+. "$DIR/berkshelf.sh"
+. "$DIR/application_data.sh"

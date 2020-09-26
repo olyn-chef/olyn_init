@@ -12,30 +12,14 @@ echo "Updating packages..."
 # Update all installed system packages
 apt-get update
 
-# Specify a lock file to know if this is the first run or not
-apt_lock_file="/srv/chef/tmp/scripts.apt.upgrade.lock"
+# Lock file found
+echo "Performing package upgrades..."
 
-# Perform a package upgrade if this is the first run
-if [[ ! -f ${apt_lock_file} ]]; then
+# Upgrade all system packages - including ones being held back
+apt-get upgrade --show-upgraded --with-new-pkgs
 
-  # Lock file found
-  echo "Performing first time package upgrades..."
-
-  # Upgrade all system packages - including ones being held back
-  apt-get -y upgrade --show-upgraded --with-new-pkgs
-
-  # Clean up unneeded packages
-  apt autoremove -y
-
-  # Create the lock file
-  touch ${apt_lock_file}
-
-else
-
-  # Lock file found
-  echo "Skipping package upgrades..."
-
-fi
+# Clean up unneeded packages
+apt autoremove
 
 echo "Installing curl..."
 

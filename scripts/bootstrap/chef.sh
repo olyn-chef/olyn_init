@@ -29,12 +29,12 @@ else
 
 fi
 
-# Install chef if chef is not installed or the installed version doesn't match
+# Install Chef if it isn't installed or doesn't match the required version
 if [[ "$chef_installed_version" != "$chef_required_version" ]]; then
 
   echo "Installing Chef v.$chef_required_version..."
 
-  # Run the chef installer with version pin at the end
+  # Run the Chef installer with version pin at the end
   curl -L https://www.opscode.com/chef/install.sh | bash -s -- -v ${chef_required_version}
   echo 'export PATH="/opt/chef/embedded/bin:$PATH"' >> /root/.bash_profile && source /root/.bash_profile
 
