@@ -6,7 +6,7 @@
 :: Unlike the `install.bat` script, this will attempt to download the latest acceptable versions of all cookbooks and their dependencies.
 
 :: Run Berks to fetch cookbook sources and dependencies to latest acceptable versions
-call berks update
+call berks update -b Berksfile-dev
 
 :: Run Berks to compile cookbook sources to the cookbook directory
-call berks vendor cookbooks
+call berks vendor cookbooks -b Berksfile-dev
