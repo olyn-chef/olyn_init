@@ -8,5 +8,8 @@
 :: Run Berks to fetch cookbook sources and dependencies to latest acceptable versions
 call berks update -b Berksfile-dev
 
+:: Run Berks to fetch cookbook sources and dependencies to latest acceptable versions
+call berks update
+
 :: Run Berks to compile cookbook sources to the cookbook directory
 call berks vendor cookbooks -b Berksfile-dev
